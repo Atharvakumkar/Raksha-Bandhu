@@ -492,7 +492,7 @@
 
   <script>
     // API Configuration
-    const API_URL = 'http://localhost:5001/api/safety-reviews';
+    const API_URL = '/inspection/api/safety-reviews';
 
     // Tabs logic
     const tabForm = document.getElementById('tabForm');
@@ -608,7 +608,7 @@
         submitBtn.innerHTML = originalText;
       } catch (error) {
         console.error('Error:', error);
-        alert(`✗ Error submitting form: ${error.message}\n\nMake sure the backend server is running on http://localhost:5001`);
+        alert("Error submitting form: ${error.message}");
         const submitBtn = document.querySelector('button[type="submit"]');
         submitBtn.disabled = false;
         submitBtn.innerHTML = '<i class="fas fa-check"></i> Submit';
@@ -755,7 +755,7 @@
         const url = app[key + 'Url'] || (app.files && app.files[key]);
         if (url) {
           const a = document.createElement('a');
-          a.href = 'http://localhost:5001' + url;
+          a.href = '/inspection' + url;
           a.target = '_blank';
           a.rel = 'noopener';
           a.className = 'block text-blue-600 underline mb-1';
